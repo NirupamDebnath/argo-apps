@@ -17,11 +17,6 @@ spec:
     path: helm-charts/ms-nginx
     helm:
       releaseName: mx-nginx
-      values: |
-        env:
-          {{- with .Values.msnginx.env }}
-          {{- toYaml . | nindent 10 }}
-          {{- end }}
       parameters:
         - name: "env[1].name"
           value: "KEY2"
