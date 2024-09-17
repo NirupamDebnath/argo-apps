@@ -24,10 +24,7 @@ spec:
           value: "KEY1"
         - name: "env[0].value"
           value: "from paremeters in bootstrap-app/templates/ms-nginx.yaml"
-        - name: "env[1].name"
-          value: "CLUSTER_NAME"
-        - name: "env[1].value"
-          value: "undefined"
+        
   # Destination cluster and namespace to deploy the application
   destination:
     server: https://kubernetes.default.svc
