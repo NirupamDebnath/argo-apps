@@ -1,2 +1,7 @@
 msnginx:
   enabled: true
+  env:
+    key1: 'from values.yaml'
+
+karpenter:
+  enabled: false
