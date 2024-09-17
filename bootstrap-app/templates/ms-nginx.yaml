@@ -19,7 +19,11 @@ spec:
       releaseName: mx-nginx
       valueFiles:
         - values.yaml
-      values: {{ .Values | quote }}
+      values: |
+        msnginx:
+          {{- with .Values.msnginx }}
+          {{- toYaml . | nindent 10 }}
+          {{- end }}
       parameters:
         - name: "env[1].name"
           value: "KEY2"
