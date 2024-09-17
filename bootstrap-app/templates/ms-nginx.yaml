@@ -19,6 +19,7 @@ spec:
       releaseName: mx-nginx
       valueFiles:
         - values.yaml
+      values: {{ .Values | quote }}
       parameters:
         - name: "env[1].name"
           value: "KEY2"
