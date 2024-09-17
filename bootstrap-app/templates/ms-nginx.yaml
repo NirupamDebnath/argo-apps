@@ -19,7 +19,7 @@ spec:
       releaseName: mx-nginx
       valueFiles:
         - values.yaml
-      values: 
+      values: |
         env:
           {{- with .Values.msnginx.env }}
           {{- toYaml . | nindent 10 }}
