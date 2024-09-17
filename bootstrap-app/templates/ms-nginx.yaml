@@ -17,8 +17,6 @@ spec:
     path: helm-charts/ms-nginx
     helm:
       releaseName: mx-nginx
-      valueFiles:
-        - values.yaml
       values: |
         env:
           {{- with .Values.msnginx.env }}
