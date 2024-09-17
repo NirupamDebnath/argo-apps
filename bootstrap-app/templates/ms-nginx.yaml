@@ -19,6 +19,11 @@ spec:
       releaseName: mx-nginx
       valueFiles:
         - values.yaml
+      parameters:
+        - name: "env[0].name"
+          value: "KEY1"
+        - name: "env[0].value"
+          value: "from paremeters in bootstrap-app/templates/ms-nginx.yaml"
   # Destination cluster and namespace to deploy the application
   destination:
     server: https://kubernetes.default.svc
