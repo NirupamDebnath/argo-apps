@@ -20,9 +20,9 @@ spec:
       valueFiles:
         - values.yaml
       parameters:
-        - name: "env[0].name"
+        - name: "env[1].name"
           value: "KEY2"
-        - name: "env[0].value"
+        - name: "env[1].value"
           value: "from paremeters in bootstrap-app/templates/ms-nginx.yaml"
         
   # Destination cluster and namespace to deploy the application
