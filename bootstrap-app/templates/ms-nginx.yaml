@@ -20,8 +20,8 @@ spec:
       valueFiles:
         - values.yaml
       values: |
-        msnginx:
-          {{- with .Values.msnginx }}
+        env:
+          {{- with .Values.msnginx.env }}
           {{- toYaml . | nindent 10 }}
           {{- end }}
       parameters:
