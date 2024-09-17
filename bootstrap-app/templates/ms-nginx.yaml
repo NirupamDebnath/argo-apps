@@ -21,7 +21,7 @@ spec:
         - values.yaml
       parameters:
         - name: "env[0].name"
-          value: "KEY1"
+          value: "KEY2"
         - name: "env[0].value"
           value: "from paremeters in bootstrap-app/templates/ms-nginx.yaml"
         
