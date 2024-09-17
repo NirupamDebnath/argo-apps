@@ -17,8 +17,6 @@ spec:
     path: bootstrap-app
     helm:
       releaseName: bootstrap-app
-      valueFiles:
-        - values.yaml
       values: |
         msnginx:
           enabled: true
