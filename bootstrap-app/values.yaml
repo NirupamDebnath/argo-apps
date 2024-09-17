@@ -1,7 +1,7 @@
 msnginx:
   enabled: true
   env:
-    key1: 'from values.yaml'
+    key1: 'from bootstrap-app/templates/values.yaml'
 
 karpenter:
   enabled: false
