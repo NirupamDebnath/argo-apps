@@ -1,8 +1,8 @@
-{{ if .Values.karpenter.enabled }}
+{{ if .Values.istioBase.enabled }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: karpenter-app
+  name: istio-base
   # You'll usually want to add your resources to the argocd namespace.
   namespace: argocd
   # Add this finalizer ONLY if you want these to cascade delete.
@@ -13,19 +13,14 @@ spec:
   project: dafault
   # Source of the application manifests
   sources:
-  - repoURL: public.ecr.aws/karpenter/karpenter # Can point to either a Helm chart repo or a git repo.
-    targetRevision: 1.0.2 # For Helm, this refers to the chart version.
-    chart: karpenter
+  - repoURL: https://istio-release.storage.googleapis.com/charts # Can point to either a Helm chart repo or a git repo.
+    targetRevision: 1.23.2 # For Helm, this refers to the chart version.
+    chart: base
     helm:
-      releaseName: karpenter
+      releaseName: istio-base
       values: |
-        serviceAccount: 
-          create: true
-          name: "karpenter"
-          annotations: 
-            eks.amazonaws.com/role-arn: {{ .Values.karpenter.serviceAccountRoleArn }} ??
-        settings:
-          clusterName: Euc1AmsAcademyPreprod01EksCluster ??
+        webhooks:
+        failurePolicy: Fail
           
   # Destination cluster and namespace to deploy the application
   destination:
