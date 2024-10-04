@@ -20,7 +20,7 @@ spec:
       releaseName: istio-base
       values: |
         webhooks:
-        failurePolicy: Fail
+          failurePolicy: Fail
           
   # Destination cluster and namespace to deploy the application
   destination:
