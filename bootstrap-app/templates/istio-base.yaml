@@ -9,7 +9,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   # The project the application belongs to.
-  project: dafault
+  project: default
   # Source of the application manifests
   sources:
   - repoURL: https://istio-release.storage.googleapis.com/charts # Can point to either a Helm chart repo or a git repo.
