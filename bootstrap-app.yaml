@@ -23,6 +23,9 @@ spec:
           env:
             key1: 'from bootstrap-app.yaml'
 
+        istiod: 
+          enabled: true
+
   # Destination cluster and namespace to deploy the application
   destination:
     server: https://kubernetes.default.svc
