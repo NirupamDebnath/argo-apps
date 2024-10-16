@@ -12,7 +12,7 @@ istiod:
   enabled: true
 
 istioGateway:
-  publicSubnets: "subnet-004776c488b7d7392,subnet-00fe048ac43eff81f"
+  publicSubnets: ""
   nlbName: "demoeksnlb-external"
   acmCertificate: "###"
   external:

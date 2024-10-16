@@ -1,4 +1,4 @@
-{{ if and .Values.istioGateway.external.enabled (ne .Values.istioGateway.acmCertificate "") }}
+{{ if and .Values.istioGateway.external.enabled (ne .Values.istioGateway.publicSubnets "") }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
