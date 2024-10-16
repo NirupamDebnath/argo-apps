@@ -16,7 +16,7 @@ istioGateway:
   nlbName: "demoeksnlb-external"
   acmCertificate: "###"
   external:
-    enabled: false
+    enabled: true
 
 albController:
   enabled: true
