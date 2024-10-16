@@ -48,9 +48,9 @@ spec:
   #        "service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags": {{ .Values.istioGateway.tags}}
   # Destination cluster and namespace to deploy the application
   destination:
-    server: {{ .Values.spec.clusterEndPoint }}
+    server: https://kubernetes.default.svc
     # The namespace will only be set for namespace-scoped resources that have not set a value for .metadata.namespace
-    namespace: {{ .Values.namespace.istioSystem }}
+    namespace: istio-system
   # Sync policy
   syncPolicy:
     automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.

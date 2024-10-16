@@ -17,21 +17,8 @@ spec:
     path: bootstrap-app
     helm:
       releaseName: bootstrap-app
-      values: |
-        msnginx:
-          enabled: true
-          env:
-            key1: 'from bootstrap-app.yaml'
-
-        istiod: 
-          enabled: true
-
-        istioGateway:
-          publicSubnets: "subnet-004776c488b7d7392,subnet-00fe048ac43eff81f"
-          nlbName: "demoeksnlb-external"
-          acmCertificate: ""
-          external:
-            enabled: true
+      valueFiles:
+        - values.yaml
 
   # Destination cluster and namespace to deploy the application
   destination:

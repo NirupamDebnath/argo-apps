@@ -1,7 +1,17 @@
 msnginx:
   enabled: true
   env:
-    key1: 'from bootstrap-app/templates/values.yaml'
+    key1: "from bootstrap-app/templates/values.yaml"
 
 karpenter:
   enabled: false
+
+istiod:
+  enabled: true
+
+istioGateway:
+  publicSubnets: "subnet-004776c488b7d7392,subnet-00fe048ac43eff81f"
+  nlbName: "demoeksnlb-external"
+  acmCertificate: "abc"
+  external:
+    enabled: true
