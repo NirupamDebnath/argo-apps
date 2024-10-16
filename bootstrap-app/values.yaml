@@ -20,4 +20,4 @@ istioGateway:
 
 albController:
   enabled: true
-  serviceAccountRoleArn: "###"
+  serviceAccountRoleArn: ""
