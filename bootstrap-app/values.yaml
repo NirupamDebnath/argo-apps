@@ -14,4 +14,4 @@ istioGateway:
   nlbName: "demoeksnlb-external"
   acmCertificate: "abc"
   external:
-    enabled: true
+    enabled: false
