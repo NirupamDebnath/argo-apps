@@ -41,7 +41,7 @@ spec:
           "service.beta.kubernetes.io/aws-load-balancer-healthcheck-path": "/healthz/ready"
           "service.beta.kubernetes.io/aws-load-balancer-subnets": {{ .Values.istioGateway.publicSubnets }}
           "service.beta.kubernetes.io/aws-load-balancer-name": {{ .Values.istioGateway.nlbName}}
-          "service.beta.kubernetes.io/aws-load-balancer-ssl-cert": {{ .Values.istioGateway.acmCertificate }}
+          "service.beta.kubernetes.io/aws-load-balancer-ssl-cert": "{{ .Values.istioGateway.acmCertificate }}"
           "service.beta.kubernetes.io/aws-load-balancer-ssl-ports": "443"
           "service.beta.kubernetes.io/aws-load-balancer-ssl-negotiation-policy": "ELBSecurityPolicy-TLS13-1-0-2021-06"
           "service.beta.kubernetes.io/aws-load-balancer-manage-backend-security-group-rules": "true"
