@@ -1,7 +1,7 @@
 clusterName: NirupamDemoEKSCluster
 
 msnginx:
-  enabled: true
+  enabled: false
   env:
     key1: "from bootstrap-app/templates/values.yaml"
 
@@ -12,12 +12,12 @@ istiod:
   enabled: true
 
 istioGateway:
-  publicSubnets: ""
+  publicSubnets: "subnet-0f8fb590dbdc423c2,subnet-03398420bc1998427"
   nlbName: "demoeksnlb-external"
-  acmCertificate: "###"
+  acmCertificate: "arn:aws:acm:ap-southeast-2:465296807398:certificate/6cef580e-f7a3-4559-bdd4-ffb2470ac911"
   external:
     enabled: true
 
 albController:
   enabled: true
-  serviceAccountRoleArn: ""
+  serviceAccountRoleArn: "arn:aws:iam::465296807398:role/NirupamDemoEKSClusterALBControllerSARole"
