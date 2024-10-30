@@ -12,11 +12,11 @@ istiod:
   enabled: true
 
 istioGateway:
-  publicSubnets: "subnet-0f8fb590dbdc423c2,subnet-03398420bc1998427"
+  publicSubnets: "subnet-0f8b32a99daab0f7b,subnet-0532b54900f75c8da"
   nlbName: "demoeksnlb-external"
-  acmCertificate: "arn:aws:acm:ap-southeast-2:465296807398:certificate/6cef580e-f7a3-4559-bdd4-ffb2470ac911"
+  acmCertificate: "arn:aws:acm:ap-southeast-2:465296807398:certificate/909d7153-a351-47f0-8424-f124701a8918"
   external:
-    enabled: false
+    enabled: true
 
 albController:
   enabled: true
