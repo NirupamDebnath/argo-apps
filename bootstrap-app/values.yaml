@@ -12,12 +12,12 @@ istiod:
   enabled: true
 
 istioGateway:
-  publicSubnets: "subnet-0f8b32a99daab0f7b,subnet-0532b54900f75c8da"
+  publicSubnets: ""
   nlbName: "demoeksnlb-external"
-  acmCertificate: "arn:aws:acm:ap-southeast-2:465296807398:certificate/909d7153-a351-47f0-8424-f124701a8918"
+  acmCertificate: ""
   external:
-    enabled: true
+    enabled: false
 
 albController:
-  enabled: true
-  serviceAccountRoleArn: "arn:aws:iam::465296807398:role/NirupamDemoEKSClusterALBControllerSARole"
+  enabled: false
+  serviceAccountRoleArn: ""

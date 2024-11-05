@@ -14,7 +14,7 @@ spec:
   # Source of the application manifests
   sources:
   - repoURL: public.ecr.aws/karpenter/karpenter # Can point to either a Helm chart repo or a git repo.
-    targetRevision: 1.0.2 # For Helm, this refers to the chart version.
+    targetRevision: 1.0.7 # For Helm, this refers to the chart version.
     chart: karpenter
     helm:
       releaseName: karpenter
