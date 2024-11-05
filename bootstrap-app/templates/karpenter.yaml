@@ -1,4 +1,4 @@
-{{ if .Values.karpenter.enabled }}
+{{ if and (ne .Values.karpenter.serviceAccountRoleArn "") (ne .Values.clusterName "")  }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -23,9 +23,9 @@ spec:
           create: true
           name: "karpenter"
           annotations: 
-            eks.amazonaws.com/role-arn: {{ .Values.karpenter.serviceAccountRoleArn }} ??
+            eks.amazonaws.com/role-arn: {{ .Values.karpenter.serviceAccountRoleArn }}
         settings:
-          clusterName: Euc1AmsAcademyPreprod01EksCluster ??
+          clusterName: {{ .Values.clusterName }}
           
   # Destination cluster and namespace to deploy the application
   destination:
