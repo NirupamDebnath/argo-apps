@@ -17,8 +17,8 @@ spec:
   instanceProfile: " NirupamDemoEKSKarpenterNodeRole"
   subnetSelectorTerms:
     - tags:
-        kubernetes.io/cluster/{{ .Values.clusterName }}: owned # replace with your cluster name
+        SubnetTier: NirupamDemoEKSControlPlaneSubnet
   securityGroupSelectorTerms:
     - tags:
-        SubnetTier: NirupamDemoEKSControlPlaneSubnet # replace with your cluster name
+        kubernetes.io/cluster/{{ .Values.clusterName }}: owned
 {{ end }}
