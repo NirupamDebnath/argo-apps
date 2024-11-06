@@ -1,11 +1,6 @@
 clusterName: NirupamDemoEKSCluster
 argoHost: ""
 
-msnginx:
-  enabled: false
-  env:
-    key1: "from bootstrap-app/templates/values.yaml"
-
 karpenter:
   enabled: false
   serviceAccountRoleArn: ""
