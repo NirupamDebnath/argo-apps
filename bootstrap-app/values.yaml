@@ -1,4 +1,4 @@
-clusterName: NirupamDemoEKSCluster
+clusterName: "NirupamDemoEKSCluster"
 argoHost: ""
 
 karpenter:

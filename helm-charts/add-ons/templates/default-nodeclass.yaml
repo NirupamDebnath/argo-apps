@@ -1,0 +1,24 @@
+{{ if ne .Values.clusterName "" }}
+apiVersion: karpenter.k8s.aws/v1
+kind: EC2NodeClass
+metadata:
+  name: default
+spec:
+  amiFamily: AL2 # Amazon Linux 2
+  amiSelectorTerms:
+    - name: "amazon-eks-node-1.29*" # <- automatically upgrade when a new AL2 EKS Optimized AMI is released. This is unsafe for production workloads. Validate AMIs in lower environments before deploying them to production.
+  blockDeviceMappings:
+    - deviceName: /dev/xvda
+      ebs:
+        encrypted: true
+        volumeSize: 20Gi
+        volumeType: gp3
+  detailedMonitoring: null
+  instanceProfile: " NirupamDemoEKSKarpenterNodeRole"
+  subnetSelectorTerms:
+    - tags:
+        kubernetes.io/cluster/{{ .Values.clusterName }}: owned # replace with your cluster name
+  securityGroupSelectorTerms:
+    - tags:
+        SubnetTier: NirupamDemoEKSControlPlaneSubnet # replace with your cluster name
+{{ end }}
