@@ -14,7 +14,7 @@ spec:
         volumeSize: 20Gi
         volumeType: gp3
   detailedMonitoring: null
-  instanceProfile: " NirupamDemoEKSKarpenterNodeRole"
+  instanceProfile: NirupamDemoEKSKarpenterNodeRole
   subnetSelectorTerms:
     - tags:
         SubnetTier: NirupamDemoEKSControlPlaneSubnet
