@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mx-nginx-app
+  name: add-ons
   # You'll usually want to add your resources to the argocd namespace.
   namespace: argocd
   # Add this finalizer ONLY if you want these to cascade delete.
@@ -14,17 +14,14 @@ spec:
   sources:
   - repoURL: https://github.com/NirupamDebnath/argo-apps.git # Can point to either a Helm chart repo or a git repo.
     targetRevision: main # For Helm, this refers to the chart version.
-    path: helm-charts/ms-nginx
+    path: helm-charts/add-ons
     helm:
-      releaseName: mx-nginx
+      releaseName: add-ons
       valueFiles:
         - values.yaml
       parameters:
-        - name: "env[1].name"
-          value: "KEY2"
-        - name: "env[1].value"
-          # value: "from paremeters in bootstrap-app/templates/ms-nginx.yaml"
-          value: "{{ .Values.msnginx.env.key1 }}"
+        - name: "argoHost"
+          value: {{ .Values.argoHost }}
   # Destination cluster and namespace to deploy the application
   destination:
     server: https://kubernetes.default.svc

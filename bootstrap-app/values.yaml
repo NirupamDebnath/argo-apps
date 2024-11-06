@@ -1,4 +1,5 @@
 clusterName: NirupamDemoEKSCluster
+argoHost: ""
 
 msnginx:
   enabled: false
